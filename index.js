@@ -18,9 +18,16 @@ global["__filename"] = path.join(path.basename(new URL(import.meta.url).pathname
 const server = http.createServer( ( req, res )=> {
     //Toda la lógica del server
     // 1. Respondiendo al cliente (res)
-    res.write("Hello from the server ... \n");
+   /*  res.write("Hello from the server ... \n");
     res.write(`__dirname: ${__dirname} \n`);
-    res.write(`__filename: ${__filename} \n`);
+    res.write(`__filename: ${__filename} \n`); */
+
+    rrs.setHeader
+    res.write("<h1>Revisar la consola del server... </h1>");
+    console.log("--------------------------------")
+
+    console.log(`📣 GET - REQUEST: ${req.method} ${req.url}`);
+    /* console.log(req) */
     //2. Cerrar la conexión
     res.end();
 } ); //const porque no va a cambiar el valor
