@@ -81,6 +81,7 @@ const server = http.createServer( async(req, res)=>{
               const data = await fs.readFile(faviconPath);
               res.writeHead(200, {'Content-Type': 'image/x-icon'});
               res.end(data);
+              console.log(faviconPath);
             }catch (err) {
               console.error(err);
               // Peticion raiz
