@@ -21,6 +21,7 @@ const server = http.createServer( async(req, res)=>{
                 <!DOCTYPE html>
                 <html lang="es">
                     <head>
+                        <meta charset="UTF-8">
                         <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/fluency/256/domain.png">
                         <title>My App</title>
                     </head>
