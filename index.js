@@ -52,7 +52,7 @@ const server = http.createServer( async(req, res)=>{
                     padding: 10px 20px;
                     cursor: pointer;
                     box-shadow: 0px 0px 5px #3498DB;
-                    outline: none;
+                    outline: solid red;
                     }
                     button[type="submit"]:hover {
                     background-color: #2980B9;
@@ -63,7 +63,7 @@ const server = http.createServer( async(req, res)=>{
                 <h1>Hello from my server</h1>
                 <h2>Ingresa un mensaje</h2>
                 <div>
-                    <form action="/message" method="POST">
+                    <form action="/message" method="POST" onsubmit="alert('Hola prueba')">
                     <input type="text" name="message">
                     <button type="submit">Send</button>
                     </form>
@@ -179,7 +179,6 @@ const server = http.createServer( async(req, res)=>{
                 //estableciendo el redireccionamiento
                 res.setHeader('Location', '/');
                 // Se finaliza la conexion
-                alert('Revisa en tu IDE para ver la respuesta');
                 return res.end();
                 } else {
                   res.statusCode = 404;
