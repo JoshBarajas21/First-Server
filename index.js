@@ -162,10 +162,8 @@ const server = http.createServer( async(req, res)=>{
                   }));
                   // Se registra una manejador de eventos
                       // para el termino de recepción de datos
-                  req.on("end", async() => {
+                  req.on("end", () => {
                     // Procesa el formulario
-                    res.statusCode = 200;
-                    res.setHeader("Content-Type", "text/html");
                     // Mediante URLSearchParams se extraen
                           // los campos del formulario
                     const params = new URLSearchParams(body);
@@ -173,15 +171,16 @@ const server = http.createServer( async(req, res)=>{
                           // en la variable params
                     const parsedParams = Object.fromEntries(params);
                     //almacenar el mensaje en un archivo
-                    await fs.writeFile('message.txt', parsedParams.message);
-                    //establecer código de respuesta
-                    //para redireccionamiento
-                    res.statusCode= 302;
-                    //estableciendo el redireccionamiento
-                    res.setHeader('location', '/');
-                    // Se finaliza la conexion
-                    return res.end();
-                  })
+                    fs.writeFile('message.txt', parsedParams.message);
+                })
+                //establecer código de respuesta
+                //para redireccionamiento
+                res.statusCode= 302;
+                //estableciendo el redireccionamiento
+                res.setHeader('Location', '/');
+                // Se finaliza la conexion
+                alert('Revisa en tu IDE para ver la respuesta');
+                return res.end();
                 } else {
                   res.statusCode = 404;
                   res.write("404: Endpoint no encontrado")
