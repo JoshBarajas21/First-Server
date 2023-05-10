@@ -26,7 +26,7 @@ export default async(req, res)=>{
             res.end();
       break;
 
-        case "/authores":
+        case "/author":
             //Cabeceras de la página
             res.setHeader('Content-Type', 'text/html');
             const File2 = path.join(__dirname, 'views/author.html');
