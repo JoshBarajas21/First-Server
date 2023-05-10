@@ -6,10 +6,11 @@
   "type": "module",
   "engines": {
     "node": "19.x",
-    "npm": "9.x"  
+    "npm": "9.x"
   },
   "scripts": {
-    "start": "node ./"
+    "start": "node ./",
+    "dev": "nodemon ./"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
     "CREATE"
   ],
   "author": "@JoshBarajas",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }

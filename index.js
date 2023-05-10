@@ -9,5 +9,5 @@ global["__dirname"] = path.dirname(new URL(import.meta.url).pathname);
 const server = http.createServer( app );
 
 server.listen(3000, "0.0.0.0", () => {
-    console.log("👨🏻‍💻 Servidor escuchando en http://localhost:3000");
+    console.log("👨🏻‍💻 Servidore escuchando en http://localhost:3000");
 });
